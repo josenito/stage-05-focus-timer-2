@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --bg-body: #E5E5E5;
+  --fc-card-select: #FFFFFF;
+
+  font-size: 62.5%;
+}
+
+.lightTheme {
+  --bg-main: #FFFFFF;
+  --bg-cards: #E1E1E6;
+  --bg-card-select: #02799D;
+
+  --fc-primary: #323238;
+  --fc-secondary: #323238;
+}
+
+.darkTheme {
+  --bg-main: #121214;
+  --bg-cards: #29292E;
+  --bg-card-select: #0A3442;
+
+  --fc-primary: #FFFFFF;
+  --fc-secondary: #C4C4CC;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  min-height: 100vh;
+
+  background-color: var(--bg-body);
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  position: relative;
+  max-width: 128rem;
+  min-height: 72rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 19.2rem;
+
+  background-color: var(--bg-main);
+  padding: 19.2rem 22.95rem;
+
+  border-radius: 1.5rem;
+}
+
+.selectMode {
+  position: absolute;
+  top: 6.4rem;
+  right: 6.4rem;
+}
+
+
+
+.timer {
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+
+  display: flex;
+  padding-bottom: 1.7rem;
+  color: var(--fc-primary);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: var(--fc-primary);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+button svg path {
+  fill: var(--fc-secondary)
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+.card {
+  width: 13.8rem;
+  height: 15.2rem;
+  background-color: var(--bg-cards);
+  border-radius: 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.8rem;
+
+  cursor: pointer;
+
+  transition: opacity 200ms;
+}
+
+.card input {
+  appearance: none;
+  width: 9rem;
+  height: 0.4rem;
+
+  border-radius: 0.5rem;
+
+  background-color: var(--fc-primary);
+}
+
+.card input::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1.6rem;
+  background-color: var(--fc-primary);
+
+}
+
+.card:hover,
+button:hover,
+.selectMode a:hover {
+  opacity: .8;
+}
+
+.card svg path {
+  fill: var(--fc-secondary);
+}
+
+.cardSelected {
+  background-color: var(--bg-card-select);
+}
+
+.cardSelected svg path {
+  fill: var(--fc-card-select);
+}
+
+
+@media (max-width: 860px) {
+  main {
+    display: block;
+    padding: 2rem;
+  }
+
+  .controls {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .timer {
+    margin-top: 3rem;
+  }
+
+  .selectMode {
+    top: 2rem;
+    right: 2rem;
+  }
+}
